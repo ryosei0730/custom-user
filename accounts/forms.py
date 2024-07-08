@@ -14,7 +14,7 @@ class SignupUserForm(SignupForm):
 
     def save(self, request):
         user = super(SignupUserForm, self).save(request)
-        user.first_name = self.cleand_data['first_name']
-        user.last_name = self.cleand_data['last_name']
+        user.first_name = self.cleaned_data['first_name']
+        user.last_name = self.cleaned_data['last_name']
         user.save()
         return user
